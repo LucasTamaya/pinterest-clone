@@ -1,5 +1,0 @@
-tabs: ['README.md', 'server/index.js','client/src/index.js']
-terminal-one: cd server && yarn && yarn start
-terminal-two: |
-	cd client && yarn
-	yarn start --port $PUBLIC_PORT
