@@ -1,14 +1,32 @@
-const { ApolloServer } = require('apollo-server')
-const { typeDefs } = require('./schema/type-defs')
-const { resolvers } = require('./schema/resolvers')
+// require("dotenv").config({ path: "/config.env" });
+const express = require("express");
+const { graphqlHTTP } = require("express-graphql");
+const mongoose = require("mongoose");
+const cors = require("cors");
 
-const mongoose = require('mongoose')
+const schema = require("./schema/schema");
 
-// Creates MongoDB database
-mongoose.connect('mongodb://localhost:27017/my-project')
+const app = express();
 
-const server = new ApolloServer({ typeDefs, resolvers })
+// Middleware CORS afin d'autoriser la connexion au serveur aux autres appareils
+app.use(cors());
 
-server.listen(1338).then(({ url }) => {
-	console.log(`YOUR API IS RUNNING AT: ${url} :)`)
-})
+mongoose.connect(
+  "mongodb+srv://lucas_tamaya:Lucas2003@linkedincloneapp.4qysj.mongodb.net/PinterestClone?retryWrites=true&w=majority"
+);
+mongoose.connection.once("open", () => console.log("MONGODB connected"));
+
+// Création du serveur graphql
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema,
+    graphiql: true,
+  })
+);
+
+// Démarrage du serveur
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+  console.log("Server is running on port", PORT);
+});
