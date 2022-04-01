@@ -2,6 +2,8 @@ const graphql = require("graphql");
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 
+const UserType = require("./TypesDef/UserType");
+
 const {
   GraphQLObjectType,
   GraphQLList,
@@ -10,17 +12,6 @@ const {
   GraphQLInt,
   GraphQLNonNull,
 } = graphql;
-
-// Définition du User Type
-const UserType = new GraphQLObjectType({
-  name: "User",
-  fields: () => ({
-    username: { type: GraphQLString },
-    email: { type: GraphQLString },
-    password: { type: GraphQLString },
-    _id: { type: GraphQLID },
-  }),
-});
 
 // Définition des roots queries
 const RootQuery = new GraphQLObjectType({
@@ -50,7 +41,7 @@ const RootQuery = new GraphQLObjectType({
           }
 
           if (matchPasswords) {
-            return user
+            return user;
           }
         }
       },
