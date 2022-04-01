@@ -37,6 +37,10 @@ function Login() {
     }
 
     if (data) {
+      // Récupère l'id de l'utilsateur afin de le stocker dans le localStorage
+      localStorage.setItem("id", data.login._id);
+      console.log(data)
+      console.log(data.login._id);
       navigate("/");
     }
   }, [error, data]);

@@ -8,3 +8,20 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin btnMixin {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border: none;
+  background-color: red;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease background-color;
+
+  &:hover {
+    background-color: rgb(221, 0, 0);
+  }
+}

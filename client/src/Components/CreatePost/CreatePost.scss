@@ -1,0 +1,45 @@
+@import "../../utils/mixins";
+@import "../../utils/variables";
+
+.createPost__iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.createPost__title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.createPost__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 15px;
+  padding: 30px;
+
+  .createPost__input {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid $light-gray-color;
+    outline: none;
+  }
+
+  .createPost__textarea{
+    resize: none;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid $light-gray-color;
+    outline: none;
+  }
+}
+
+.createPost__btn{
+    @include btnMixin;
+}

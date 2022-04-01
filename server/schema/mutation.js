@@ -1,8 +1,10 @@
 const graphql = require("graphql");
-const User = require("../models/user");
 const bcrypt = require("bcrypt");
 
+const User = require("../models/user");
 const UserType = require("./TypesDef/UserType");
+const Post = require("../models/post");
+const PostType = require("./TypesDef/PostType");
 
 const {
   GraphQLObjectType,
@@ -17,7 +19,7 @@ const {
 const Mutation = new GraphQLObjectType({
   name: "Mutation",
   fields: {
-    // Endpoint register
+    // Endpoint pour le register
     register: {
       type: UserType,
       args: {
@@ -37,7 +39,7 @@ const Mutation = new GraphQLObjectType({
           // Hash du password avec bcrypt
           const salt = await bcrypt.genSalt(10);
           const hashPassword = await bcrypt.hash(password, salt);
-          let newUser = new User({
+          const newUser = new User({
             username,
             email,
             password: hashPassword,
@@ -48,12 +50,12 @@ const Mutation = new GraphQLObjectType({
       },
     },
 
-    // Endpoint login
+    // Endpoint pour le login
     login: {
       type: UserType,
       args: {
-        email: { type: GraphQLString },
-        password: { type: GraphQLString },
+        email: { type: new GraphQLNonNull(GraphQLString) },
+        password: { type: new GraphQLNonNull(GraphQLString) },
       },
       resolve: async (parent, { email, password }) => {
         const user = await User.findOne({ email });
@@ -75,6 +77,25 @@ const Mutation = new GraphQLObjectType({
             return user;
           }
         }
+      },
+    },
+    // Endpoint pour créer un post
+    createPost: {
+      type: PostType,
+      args: {
+        title: { type: new GraphQLNonNull(GraphQLString) },
+        description: { type: new GraphQLNonNull(GraphQLString) },
+        imgUrl: { type: GraphQLString }, // pas obligatoire, donc peut être = null
+        authorId: { type: new GraphQLNonNull(GraphQLString) },
+      },
+      resolve: async (parent, { title, description, imgUrl, authorId }) => {
+        const newPost = new Post({
+          title,
+          description,
+          imgUrl,
+          authorId,
+        });
+        return newPost.save();
       },
     },
   },
