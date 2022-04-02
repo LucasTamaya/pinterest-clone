@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { SINGLE_POST } from "../../GraphQL/Query";
+import AuthLoader from "../../AuthLoader/AuthLoader";
 
 function SinglePost() {
   const { id } = useParams();
@@ -17,6 +18,13 @@ function SinglePost() {
   if (error) {
     console.log(error);
   }
+
+  if (loading)
+    return (
+      <div className="authLoader__container">
+        <AuthLoader />
+      </div>
+    );
 
   if (data)
     return (

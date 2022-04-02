@@ -12,7 +12,7 @@
   margin-bottom: 15px;
 }
 
-.createPost__container {
+.createPost__form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +29,7 @@
     outline: none;
   }
 
-  .createPost__textarea{
+  .createPost__textarea {
     resize: none;
     width: 100%;
     max-width: 500px;
@@ -38,8 +38,29 @@
     border-bottom: 2px solid $light-gray-color;
     outline: none;
   }
+
+  .createPost__inputFile--label {
+    @include btnMixin;
+    border: 2px solid red;
+    background-color: white;
+    color: red;
+    text-align: center;
+
+    &:hover{
+      color: white;
+      background-color: red;
+    }
+  }
+
+  #createPost__inputFile {
+    display: none;
+  }
+
+  .display__image {
+    width: 200px;
+  }
 }
 
-.createPost__btn{
-    @include btnMixin;
+.createPost__btn {
+  @include btnMixin;
 }

@@ -25,4 +25,14 @@ const SINGLE_POST = gql`
   }
 `;
 
-export { ALL_POSTS, SINGLE_POST };
+const MY_POSTS = gql`
+  query ($id: String!) {
+    myPosts(id: $id) {
+      title
+      description
+      _id
+    }
+  }
+`;
+
+export { ALL_POSTS, SINGLE_POST, MY_POSTS };

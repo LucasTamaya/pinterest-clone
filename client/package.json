@@ -9,6 +9,8 @@
 		"@mui/icons-material": "^5.5.1",
 		"@mui/material": "^5.5.3",
 		"@snowpack/plugin-sass": "^1.4.0",
+		"axios": "^0.26.1",
+		"cloudinary-react": "^1.7.2",
 		"graphql": "^15.6.1",
 		"react": "^18.0.0-alpha-64931821a-20210808",
 		"react-dom": "^18.0.0-alpha-64931821a-20210808",

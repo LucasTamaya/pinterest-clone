@@ -5,11 +5,13 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import "./Header.scss";
 
 function Header() {
+  const id = localStorage.getItem("id");
+
   return (
     <header className="header__container">
       <PinterestIcon sx={{ fontSize: 30, color: "red" }} />
       <nav className="nav__container">
-        <Link to="/my-pins" className="nav__link">
+        <Link to={`/my-posts/${id}`} className="nav__link">
           My Pins
         </Link>
         <Link to="/saved-pins" className="nav__link">

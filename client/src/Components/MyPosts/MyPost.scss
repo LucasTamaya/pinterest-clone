@@ -1,0 +1,15 @@
+.myPosts__title{
+    text-align: center;
+}
+
+.myPosts__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+}
+
+.post{
+    border: 1px solid black;
+}

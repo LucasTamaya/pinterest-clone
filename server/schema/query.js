@@ -27,7 +27,7 @@ const RootQuery = new GraphQLObjectType({
         const posts = await Post.find({ authorId: id });
 
         if (!posts) {
-          throw new Error("No posts yey");
+          throw new Error("No posts yet");
         }
 
         if (posts) {
