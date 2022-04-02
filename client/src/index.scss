@@ -25,3 +25,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.post__image {
+  width: 140px;
+  height: 140px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+  transition: 0.2s ease box-shadow;
+
+  &:hover {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  }
+
+  @media screen and (min-width: 640px) {
+    width: 180px;
+    height: 180px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+.singlePost__image {
+  width: 180px;
+  height: 180px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 640px) {
+    width: 220px;
+    height: 220px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 240px;
+    height: 240px;
+  }
+}

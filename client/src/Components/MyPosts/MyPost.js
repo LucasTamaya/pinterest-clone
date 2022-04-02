@@ -30,7 +30,7 @@ function MyPost() {
         <h1 className="myPosts__title">Your pins</h1>
         <div className="myPosts__container">
           {data.myPosts.map((x) => (
-            <Link to={`/pin/${x._id}`} className="post">
+            <Link to={`/pin/${x._id}`} className="post" key={x._id}>
               <h1 className="post__title">{x.title}</h1>
             </Link>
           ))}

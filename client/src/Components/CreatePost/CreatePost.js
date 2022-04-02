@@ -7,6 +7,7 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 
 import "./CreatePost.scss";
 import { CREATE_POST } from "../../GraphQL/Mutation";
+import { ALL_POSTS } from "../../GraphQL/Query";
 import AuthLoader from "../../AuthLoader/AuthLoader";
 import UploadFileLoader from "../UploadFileLoader/UploadFileLoader";
 
@@ -60,6 +61,7 @@ function CreatePost() {
         imgUrl: imgUrl,
         authorId: localStorage.getItem("id"),
       },
+      refetchQueries: [ALL_POSTS],
     });
   };
 
@@ -105,14 +107,14 @@ function CreatePost() {
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
         <label
-          for="createPost__inputFile"
+          htmlFor="createPost__inputFile"
           className="createPost__inputFile--label"
         >
           Add an image
         </label>
         <input
           type="file"
-          accept="image/png, image/jpg"
+          accept="image/*"
           id="createPost__inputFile"
           placeholder="Add an image"
           onChange={(e) => handleUploadFile(e.target.files[0])}
@@ -125,6 +127,9 @@ function CreatePost() {
           Submit
         </button>
       </form>
+      <button className="goBack__btn" onClick={() => navigate(-1)}>
+        Go back
+      </button>
     </>
   );
 }

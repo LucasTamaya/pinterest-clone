@@ -1,3 +1,30 @@
+.allPosts__container {
+  display: flex;
+  justify-content: center;
+  row-gap: 20px;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  height: fit-content;
+  max-width: 1200px;
+  margin: 0 auto;
+  // background-color: blue;
+  padding: 20px;
+
+  @media screen and (min-width: 640px) {
+    // background-color: red;
+  }
+
+  @media screen and (min-width: 1024px) {
+    // background-color: green;
+  }
+}
+
+.allPosts__item {
+  width: fit-content;
+  cursor: pointer;
+}
+
 .createPost__prompt {
   position: fixed;
   bottom: 0;
@@ -16,19 +43,4 @@
   &:hover {
     transform: scale(1.1);
   }
-}
-
-.allPosts__container {
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
-}
-
-.allPosts__item {
-  border: 1px solid black;
-  width: fit-content;
-  padding: 15px;
-  margin: 0 auto;
-  border-radius: 15px;
-  cursor: pointer;
 }

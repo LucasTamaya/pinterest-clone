@@ -25,13 +25,15 @@ function LandingPage() {
   return (
     <div className="title">
       <Header />
-      <h1>Landing Page</h1>
 
       {data && (
         <div className="allPosts__container">
           {data.allPosts.map((x) => (
-            <Link to={`/pin/${x._id}`} className="allPosts__item">
-              <h1>{x.title}</h1>
+            <Link to={`/pin/${x._id}`} className="allPosts__item" key={x._id}>
+              <div
+                className="post__image"
+                style={{ backgroundImage: `url(${x.imgUrl})` }}
+              ></div>
             </Link>
           ))}
         </div>
