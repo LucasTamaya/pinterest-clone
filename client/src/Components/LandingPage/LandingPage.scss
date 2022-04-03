@@ -1,29 +1,5 @@
-.allPosts__container {
-  display: flex;
-  justify-content: center;
-  row-gap: 20px;
-  column-gap: 20px;
-  flex-wrap: wrap;
-  width: 100%;
-  height: fit-content;
-  max-width: 1200px;
-  margin: 0 auto;
-  // background-color: blue;
-  padding: 20px;
-
-  @media screen and (min-width: 640px) {
-    // background-color: red;
-  }
-
-  @media screen and (min-width: 1024px) {
-    // background-color: green;
-  }
-}
-
-.allPosts__item {
-  width: fit-content;
-  cursor: pointer;
-}
+@import "../../utils/mixins";
+@import "../../utils/variables";
 
 .createPost__prompt {
   position: fixed;
@@ -33,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  background-color: $main-red-color;
   width: fit-content;
   padding: 15px;
   border-radius: 50%;

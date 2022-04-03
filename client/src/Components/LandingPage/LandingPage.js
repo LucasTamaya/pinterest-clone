@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import PostAddIcon from "@mui/icons-material/PostAdd";
@@ -9,7 +9,17 @@ import AuthLoader from "../../AuthLoader/AuthLoader";
 import Header from "../Header/Header";
 
 function LandingPage() {
-  const { error, loading, data } = useQuery(ALL_POSTS);
+  useEffect(() => {
+    console.log("rendering");
+
+    return () => {
+      console.log("unmounting");
+    };
+  });
+
+  const { error, loading, data } = useQuery(ALL_POSTS, {
+    fetchPolicy: "cache-and-network", // Permet d'update le cache si de nouvelles data sont présentes
+  });
 
   if (data) {
     console.log(data);
@@ -39,11 +49,9 @@ function LandingPage() {
         </div>
       )}
 
-      <div className="createPost__prompt">
-        <Link to="/create-pin">
-          <PostAddIcon sx={{ fontSize: 20, color: "white" }} />
-        </Link>
-      </div>
+      <Link to="/create-pin" className="createPost__prompt">
+        <PostAddIcon sx={{ fontSize: 20, color: "white" }} />
+      </Link>
     </div>
   );
 }

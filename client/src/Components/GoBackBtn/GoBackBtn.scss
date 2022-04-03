@@ -1,0 +1,21 @@
+@import "../../utils/mixins";
+@import "../../utils//variables";
+
+.goBack__btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 30px;
+  padding: 15px;
+  border-radius: 25px;
+  background-color: $main-red-color;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease transform;
+
+  &:hover {
+    transform: scale(1.07);
+  }
+}

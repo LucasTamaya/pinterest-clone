@@ -37,10 +37,9 @@ function Login() {
     }
 
     if (data) {
-      // Récupère l'id de l'utilsateur afin de le stocker dans le localStorage
+      // Récupère l'id et le username de l'utilsateur afin de le stocker dans le localStorage
       localStorage.setItem("id", data.login._id);
-      console.log(data)
-      console.log(data.login._id);
+      localStorage.setItem("username", data.login.username);
       navigate("/");
     }
   }, [error, data]);
@@ -82,9 +81,9 @@ function Login() {
           <span>Privacy Policy</span>
         </p>
         <p className="auth__paraBottom">
-          Already a member?{" "}
-          <Link to="/login">
-            <span>Log in</span>
+          You don't have an account yet?{" "}
+          <Link to="/register">
+            <span>Register</span>
           </Link>
         </p>
       </form>

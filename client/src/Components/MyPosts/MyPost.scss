@@ -1,5 +1,24 @@
+@import "../../utils/mixins";
+@import "../../utils/variables";
+
+.myPosts__emptyData__title{
+    text-align: center;
+    color: $main-red-color
+}
+
+.myPosts__emptyData__link{
+    @include btnMixin;
+    text-align: center;
+}
+
+.myPosts__container{
+    padding: 30px;
+}
+
 .myPosts__title{
     text-align: center;
+    color: $main-red-color;
+    font-size: 2.2rem;
 }
 
 .myPosts__container{

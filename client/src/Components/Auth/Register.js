@@ -33,9 +33,10 @@ function Register() {
     }
 
     if (data) {
-      console.log(data)
-      // Récupère l'id de l'utilsateur afin de le stocker dans le localStorage
+      console.log(data);
+      // Récupère l'id et le username de l'utilsateur afin de le stocker dans le localStorage
       localStorage.setItem("id", data.register._id);
+      localStorage.setItem("username", data.register.username);
       navigate("/");
     }
   }, [error, data]);

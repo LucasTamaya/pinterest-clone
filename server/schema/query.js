@@ -33,24 +33,6 @@ const RootQuery = new GraphQLObjectType({
         if (posts) {
           return posts;
         }
-
-        // Si l'utilisateur n'existe pas, on renvoit un message d'erreur
-        if (!user) {
-          throw new Error("Email or password invalid");
-        }
-
-        if (user) {
-          // On compare les mots de passe
-          const matchPasswords = await bcrypt.compare(password, user.password);
-
-          if (!matchPasswords) {
-            throw new Error("Email or password invalid");
-          }
-
-          if (matchPasswords) {
-            return user;
-          }
-        }
       },
     },
     // Endpoint getAllPins

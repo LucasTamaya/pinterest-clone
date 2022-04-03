@@ -1,15 +1,14 @@
 import React from "react";
 import "./SinglePost.scss";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { SINGLE_POST } from "../../GraphQL/Query";
 import AuthLoader from "../../AuthLoader/AuthLoader";
+import GoBackBtn from "../GoBackBtn/GoBackBtn";
 
 function SinglePost() {
   const { id } = useParams();
-
-  const navigate = useNavigate();
 
   const { error, loading, data } = useQuery(SINGLE_POST, {
     variables: { id: id },
@@ -35,18 +34,18 @@ function SinglePost() {
               className="singlePost__image"
               style={{ backgroundImage: `url(${data.singlePost.imgUrl})` }}
             ></div>
-            <h1 className="singlePost__title">{data.singlePost.title}</h1>
-            <p className="singlePost__description">
-              {data.singlePost.description}
-            </p>
-            <p className="singlePost__author">
-              By <span>{data.singlePost.author.username}</span>
-            </p>
+            <div>
+              <h1 className="singlePost__title">{data.singlePost.title}</h1>
+              <p className="singlePost__description">
+                {data.singlePost.description}
+              </p>
+              <p className="singlePost__author">
+                By <span>{data.singlePost.author.username}</span>
+              </p>
+            </div>
           </div>
         </div>
-        <button className="goBack__btn" onClick={() => navigate(-1)}>
-          Go back
-        </button>
+        <GoBackBtn />
       </>
     );
 }

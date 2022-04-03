@@ -10,6 +10,7 @@ import { CREATE_POST } from "../../GraphQL/Mutation";
 import { ALL_POSTS } from "../../GraphQL/Query";
 import AuthLoader from "../../AuthLoader/AuthLoader";
 import UploadFileLoader from "../UploadFileLoader/UploadFileLoader";
+import GoBackBtn from "../GoBackBtn/GoBackBtn";
 
 console.log(localStorage.getItem("id"));
 
@@ -61,7 +62,6 @@ function CreatePost() {
         imgUrl: imgUrl,
         authorId: localStorage.getItem("id"),
       },
-      refetchQueries: [ALL_POSTS],
     });
   };
 
@@ -127,9 +127,8 @@ function CreatePost() {
           Submit
         </button>
       </form>
-      <button className="goBack__btn" onClick={() => navigate(-1)}>
-        Go back
-      </button>
+
+      <GoBackBtn />
     </>
   );
 }
