@@ -34,4 +34,20 @@ const MY_POSTS = gql`
   }
 `;
 
-export { ALL_POSTS, SINGLE_POST, MY_POSTS };
+const SAVED_POSTS = gql`
+  query ($id: String!) {
+    savedPosts(id: $id) {
+      savedPins {
+        title
+        description
+        imgUrl
+        _id
+        author {
+          username
+        }
+      }
+    }
+  }
+`;
+
+export { ALL_POSTS, SINGLE_POST, MY_POSTS, SAVED_POSTS };

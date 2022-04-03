@@ -19,11 +19,29 @@ const LOGIN_USER = gql`
 `;
 
 const CREATE_POST = gql`
-  mutation ($title: String!, $description: String!, $imgUrl: String!, $authorId: String!) {
-    createPost(title: $title, description: $description, imgUrl: $imgUrl, authorId: $authorId) {
+  mutation (
+    $title: String!
+    $description: String!
+    $imgUrl: String!
+    $authorId: String!
+  ) {
+    createPost(
+      title: $title
+      description: $description
+      imgUrl: $imgUrl
+      authorId: $authorId
+    ) {
       title
     }
   }
 `;
 
-export { REGISTER_USER, LOGIN_USER, CREATE_POST };
+const SAVE_POST = gql`
+  mutation ($userId: String!, $postId: String!) {
+    savePost(userId: $userId, postId: $postId) {
+      username
+    }
+  }
+`;
+
+export { REGISTER_USER, LOGIN_USER, CREATE_POST, SAVE_POST };

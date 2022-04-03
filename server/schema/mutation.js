@@ -2,9 +2,10 @@ const graphql = require("graphql");
 const bcrypt = require("bcrypt");
 
 const User = require("../models/user");
-const UserType = require("./TypesDef/UserType");
+// const UserType = require("./TypesDef/UserType");
 const Post = require("../models/post");
-const PostType = require("./TypesDef/PostType");
+// const PostType = require("./TypesDef/PostType");
+const { PostType, UserType } = require("./typesDef");
 
 const {
   GraphQLObjectType,
@@ -43,6 +44,7 @@ const Mutation = new GraphQLObjectType({
             username,
             email,
             password: hashPassword,
+            savedPinsId: [],
           });
           // On enregistre et on retourne le nouvel utilisateur
           return newUser.save();
@@ -88,7 +90,7 @@ const Mutation = new GraphQLObjectType({
         imgUrl: { type: GraphQLString }, // pas obligatoire, donc peut être = null
         authorId: { type: new GraphQLNonNull(GraphQLString) },
       },
-      resolve: async (parent, { title, description, imgUrl, authorId }) => {
+      resolve(parent, { title, description, imgUrl, authorId }) {
         const newPost = new Post({
           title,
           description,
@@ -96,6 +98,20 @@ const Mutation = new GraphQLObjectType({
           authorId,
         });
         return newPost.save();
+      },
+    },
+
+    // Endpoint pour enregistrer un post
+    savePost: {
+      type: UserType,
+      args: {
+        userId: { type: new GraphQLNonNull(GraphQLString) },
+        postId: { type: new GraphQLNonNull(GraphQLString) },
+      },
+      resolve(parent, { userId, postId }) {
+        return User.findByIdAndUpdate(userId, {
+          $push: { savedPinsId: postId },
+        });
       },
     },
   },

@@ -1,3 +1,5 @@
+@import "./variables";
+
 @mixin authLoader {
   position: absolute;
   top: 0;
@@ -14,7 +16,7 @@
   max-width: 500px;
   padding: 10px;
   border: none;
-  background-color: red;
+  background-color: $main-red-color;
   border-radius: 15px;
   color: white;
   font-weight: bold;
@@ -24,4 +26,18 @@
   &:hover {
     background-color: rgb(221, 0, 0);
   }
+}
+
+@mixin emptyBtnMixin {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border: none;
+  background-color: white;
+  border: 2px solid red;
+  border-radius: 15px;
+  color: $main-red-color;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease background-color;
 }
