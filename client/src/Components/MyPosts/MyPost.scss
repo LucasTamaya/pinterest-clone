@@ -1,34 +1,34 @@
 @import "../../utils/mixins";
 @import "../../utils/variables";
 
-.myPosts__emptyData__title{
-    text-align: center;
-    color: $main-red-color
+.myPosts__emptyData__title {
+  text-align: center;
+  color: $main-red-color;
 }
 
-.myPosts__emptyData__link{
-    @include btnMixin;
-    text-align: center;
+.myPosts__emptyData__link {
+  @include btnMixin;
+  text-align: center;
 }
 
-.myPosts__container{
-    padding: 30px;
+.myPosts__container {
+  padding: 30px;
 }
 
-.myPosts__title{
-    text-align: center;
-    color: $main-red-color;
-    font-size: 2.2rem;
+.myPosts__title {
+  text-align: center;
+  color: $main-red-color;
+  font-size: 2.2rem;
 }
 
-.myPosts__container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 15px;
+.myPosts__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 15px;
 }
 
-.post{
-    border: 1px solid black;
+.post {
+  border: 1px solid black;
 }

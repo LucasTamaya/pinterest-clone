@@ -6,6 +6,7 @@ import "./SavedPosts.scss";
 import { SAVED_POSTS } from "../../GraphQL/Query";
 import AuthLoader from "../AuthLoader/AuthLoader";
 import GoBackBtn from "../GoBackBtn/GoBackBtn";
+import UnknownError from "../UnknownError/UnknownError";
 
 function SavedPosts() {
   // Id du user
@@ -19,18 +20,15 @@ function SavedPosts() {
   });
 
   if (error) {
-    console.log(error);
+    return <UnknownError />;
   }
 
-  if (loading)
+  if (loading) {
     return (
       <div className="authLoader__container">
         <AuthLoader />
       </div>
     );
-
-  if (data) {
-    console.log(data);
   }
 
   if (data.savedPosts.savedPins.length === 0) {

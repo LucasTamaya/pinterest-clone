@@ -9,7 +9,6 @@ function Header() {
   const id = localStorage.getItem("id");
   const username = localStorage.getItem("username");
   const usernameInitial = getUsernameInitial(username);
-  console.log(usernameInitial);
 
   return (
     <header className="header__container">

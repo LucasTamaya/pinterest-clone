@@ -12,7 +12,7 @@ import SavedPosts from "./Components/SavedPosts/SavedPosts";
 
 function App() {
   const client = new ApolloClient({
-    uri: "http://localhost:4000/graphql",
+    uri: "https://pinterest-clone-graphql.herokuapp.com/graphql",
     cache: new InMemoryCache(),
   });
 

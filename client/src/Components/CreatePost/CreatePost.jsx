@@ -9,6 +9,7 @@ import "./CreatePost.scss";
 import { CREATE_POST } from "../../GraphQL/Mutation";
 import AuthLoader from "../AuthLoader/AuthLoader";
 import GoBackBtn from "../GoBackBtn/GoBackBtn";
+import UnknownError from "../UnknownError/UnknownError";
 
 console.log(localStorage.getItem("id"));
 
@@ -65,9 +66,9 @@ function CreatePost() {
 
   useEffect(() => {
     if (error) {
-      console.log(error);
       setTitle("");
       setDescription("");
+      return <UnknownError />;
     }
 
     // Lorsqu'on a crée le pin, on redirige l'utilisateur vers la page d'accueil

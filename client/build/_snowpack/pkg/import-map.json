@@ -6,7 +6,7 @@
     "@mui/icons-material/PostAdd": "./@mui/icons-material/PostAdd.js",
     "axios": "./axios.js",
     "react": "./react.js",
-    "react-dom": "./react-dom.js",
+    "react-dom/client": "./react-dom/client.js",
     "react-router-dom": "./react-router-dom.js"
   }
 }

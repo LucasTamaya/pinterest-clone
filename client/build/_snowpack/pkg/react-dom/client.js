@@ -1,4 +1,4 @@
-import { c as createCommonjsModule, r as react } from './common/index-0a5a8570.js';
+import { c as createCommonjsModule, r as react } from '../common/index-0a5a8570.js';
 
 var scheduler_production_min = createCommonjsModule(function (module, exports) {
 
@@ -8816,4 +8816,14 @@ function checkDCE() {
 }
 });
 
-export default reactDom;
+var client = createCommonjsModule(function (module, exports) {
+
+
+
+{
+  exports.createRoot = reactDom.createRoot;
+  exports.hydrateRoot = reactDom.hydrateRoot;
+}
+});
+
+export default client;

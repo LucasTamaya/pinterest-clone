@@ -9,6 +9,7 @@ import AuthLoader from "../AuthLoader/AuthLoader";
 import GoBackBtn from "../GoBackBtn/GoBackBtn";
 import SavePostSuccess from "../SavePostSuccess/SavePostSuccess";
 import AlreadySavedError from "../AlreadySavedError/AlreadySavedError";
+import UnknownError from "../UnknownError/UnknownError";
 
 function SinglePost() {
   const { id } = useParams();
@@ -41,15 +42,16 @@ function SinglePost() {
   };
 
   if (error) {
-    console.log(error);
+    return <UnknownError />;
   }
 
-  if (loading)
+  if (loading) {
     return (
       <div className="authLoader__container">
         <AuthLoader />
       </div>
     );
+  }
 
   if (data)
     return (

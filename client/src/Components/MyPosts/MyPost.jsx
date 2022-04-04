@@ -6,27 +6,26 @@ import { useQuery } from "@apollo/client";
 import { MY_POSTS } from "../../GraphQL/Query";
 import AuthLoader from "../AuthLoader/AuthLoader";
 import GoBackBtn from "../GoBackBtn/GoBackBtn";
+import UnknownError from "../UnknownError/UnknownError";
 
 function MyPost() {
   const { id } = useParams();
 
   const { error, loading, data } = useQuery(MY_POSTS, {
     variables: { id: id },
+    fetchPolicy: "cache-and-network", // Permet d'update le cache si de nouvelles data sont présentes
   });
 
-  if (data) {
-    console.log(data);
+  if (error) {
+    return <UnknownError />;
   }
 
-  if (loading)
+  if (loading) {
     return (
       <div className="authLoader__container">
         <AuthLoader />
       </div>
     );
-
-  if (error) {
-    console.log(error);
   }
 
   if (data.myPosts.length === 0) {

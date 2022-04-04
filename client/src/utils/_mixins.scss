@@ -1,5 +1,18 @@
 @import "./variables";
 
+@mixin authBtn($border-color, $bg-color, $txt-color) {
+  flex: 1;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid $border-color;
+  background-color: $bg-color;
+  color: $txt-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
 @mixin authLoader {
   position: absolute;
   top: 0;
