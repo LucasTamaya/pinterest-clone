@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./SavedPosts.scss";
 import { SAVED_POSTS } from "../../GraphQL/Query";
-import AuthLoader from "../../AuthLoader/AuthLoader";
+import AuthLoader from "../AuthLoader/AuthLoader";
 import GoBackBtn from "../GoBackBtn/GoBackBtn";
 
 function SavedPosts() {

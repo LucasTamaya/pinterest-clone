@@ -5,7 +5,7 @@ import { useQuery, useMutation } from "@apollo/client";
 
 import { SINGLE_POST } from "../../GraphQL/Query";
 import { SAVE_POST } from "../../GraphQL/Mutation";
-import AuthLoader from "../../AuthLoader/AuthLoader";
+import AuthLoader from "../AuthLoader/AuthLoader";
 import GoBackBtn from "../GoBackBtn/GoBackBtn";
 import SavePostSuccess from "../SavePostSuccess/SavePostSuccess";
 import AlreadySavedError from "../AlreadySavedError/AlreadySavedError";

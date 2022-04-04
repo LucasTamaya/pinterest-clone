@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { MY_POSTS } from "../../GraphQL/Query";
-import AuthLoader from "../../AuthLoader/AuthLoader";
+import AuthLoader from "../AuthLoader/AuthLoader";
 import GoBackBtn from "../GoBackBtn/GoBackBtn";
 
 function MyPost() {

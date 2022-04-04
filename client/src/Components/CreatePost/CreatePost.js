@@ -7,9 +7,7 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 
 import "./CreatePost.scss";
 import { CREATE_POST } from "../../GraphQL/Mutation";
-import { ALL_POSTS } from "../../GraphQL/Query";
-import AuthLoader from "../../AuthLoader/AuthLoader";
-import UploadFileLoader from "../UploadFileLoader/UploadFileLoader";
+import AuthLoader from "../AuthLoader/AuthLoader";
 import GoBackBtn from "../GoBackBtn/GoBackBtn";
 
 console.log(localStorage.getItem("id"));

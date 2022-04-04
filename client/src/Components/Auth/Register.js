@@ -5,7 +5,7 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 
 import "./Auth.scss";
 import { REGISTER_USER } from "../../GraphQL/Mutation";
-import AuthLoader from "../../AuthLoader/AuthLoader";
+import AuthLoader from "../AuthLoader/AuthLoader";
 
 function Register() {
   const [username, setUsername] = useState("");

@@ -5,7 +5,7 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 
 import "./Auth.scss";
 import { LOGIN_USER } from "../../GraphQL/Mutation";
-import AuthLoader from "../../AuthLoader/AuthLoader";
+import AuthLoader from "../AuthLoader/AuthLoader";
 
 function Login() {
   const [email, setEmail] = useState("");

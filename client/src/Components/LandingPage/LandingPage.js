@@ -5,7 +5,7 @@ import PostAddIcon from "@mui/icons-material/PostAdd";
 
 import "./LandingPage.scss";
 import { ALL_POSTS } from "../../GraphQL/Query";
-import AuthLoader from "../../AuthLoader/AuthLoader";
+import AuthLoader from "../AuthLoader/AuthLoader";
 import Header from "../Header/Header";
 
 function LandingPage() {
