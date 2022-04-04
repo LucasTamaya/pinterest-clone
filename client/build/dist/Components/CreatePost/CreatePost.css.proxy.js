@@ -1,0 +1,10 @@
+// [snowpack] add styles to the page (skip if no document exists)
+if (typeof document !== 'undefined') {
+  const code = ".createPost__iconContainer {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.createPost__title {\n  text-align: center;\n  margin-bottom: 15px;\n}\n\n.createPost__form {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  row-gap: 15px;\n  padding: 30px;\n}\n.createPost__form .createPost__input {\n  width: 100%;\n  max-width: 500px;\n  padding: 15px;\n  border: none;\n  outline: none;\n  border-radius: 15px;\n  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);\n}\n.createPost__form .createPost__textarea {\n  resize: none;\n  width: 100%;\n  max-width: 500px;\n  padding: 15px;\n  border: none;\n  outline: none;\n  border-radius: 15px;\n  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);\n}\n.createPost__form .createPost__inputFile--label {\n  width: 100%;\n  max-width: 500px;\n  padding: 10px;\n  border: none;\n  background-color: red;\n  border-radius: 15px;\n  color: white;\n  font-weight: bold;\n  cursor: pointer;\n  transition: 0.2s ease background-color;\n  border: 2px solid red;\n  background-color: white;\n  color: red;\n  text-align: center;\n}\n.createPost__form .createPost__inputFile--label:hover {\n  background-color: rgb(221, 0, 0);\n}\n.createPost__form .createPost__inputFile--label:hover {\n  color: red;\n  background-color: white;\n}\n.createPost__form #createPost__inputFile {\n  display: none;\n}\n.createPost__form .display__image {\n  width: 200px;\n}\n\n.createPost__btn {\n  width: 100%;\n  max-width: 500px;\n  padding: 10px;\n  border: none;\n  background-color: red;\n  border-radius: 15px;\n  color: white;\n  font-weight: bold;\n  cursor: pointer;\n  transition: 0.2s ease background-color;\n}\n.createPost__btn:hover {\n  background-color: rgb(221, 0, 0);\n}";
+
+  const styleEl = document.createElement("style");
+  const codeEl = document.createTextNode(code);
+  styleEl.type = 'text/css';
+  styleEl.appendChild(codeEl);
+  document.head.appendChild(styleEl);
+}

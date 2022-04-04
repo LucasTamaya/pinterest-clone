@@ -1,0 +1,18 @@
+.savePostSuccess__container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 30px;
+  padding: 15px;
+  border: 2px solid #228b22;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.savePostSuccess__message {
+  color: #228b22;
+  font-weight: bold;
+  font-size: 1.5rem;
+}

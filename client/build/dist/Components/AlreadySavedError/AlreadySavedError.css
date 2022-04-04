@@ -1,0 +1,18 @@
+.alreadySavedError__container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 30px;
+  padding: 15px;
+  border: 2px solid red;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.alreadySavedError__message {
+  color: red;
+  font-weight: bold;
+  font-size: 1.5rem;
+}

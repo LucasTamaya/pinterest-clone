@@ -1,0 +1,12 @@
+{
+  "imports": {
+    "@apollo/client": "./@apollo/client.js",
+    "@mui/icons-material/Close": "./@mui/icons-material/Close.js",
+    "@mui/icons-material/Pinterest": "./@mui/icons-material/Pinterest.js",
+    "@mui/icons-material/PostAdd": "./@mui/icons-material/PostAdd.js",
+    "axios": "./axios.js",
+    "react": "./react.js",
+    "react-dom": "./react-dom.js",
+    "react-router-dom": "./react-router-dom.js"
+  }
+}

@@ -1,0 +1,33 @@
+.header__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid red;
+  margin-bottom: 7px;
+}
+
+.nav__container {
+  display: flex;
+  column-gap: 15px;
+}
+.nav__container .nav__link {
+  color: red;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.header__profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  border: 2px solid red;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+}

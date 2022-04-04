@@ -1,0 +1,18 @@
+.createPost__prompt {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  width: fit-content;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s ease transform;
+}
+.createPost__prompt:hover {
+  transform: scale(1.1);
+}

@@ -1,0 +1,10 @@
+// [snowpack] add styles to the page (skip if no document exists)
+if (typeof document !== 'undefined') {
+  const code = ".singlePost {\n  width: 100vw;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 30px;\n}\n\n.singlePost__container {\n  padding: 20px;\n  width: 100%;\n  max-width: 600px;\n  border-radius: 15px;\n  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.192), 0 4px 6px -4px rgba(0, 0, 0, 0.192);\n  display: flex;\n  flex-direction: column;\n  row-gap: 7px;\n}\n@media screen and (min-width: 640px) {\n  .singlePost__container {\n    flex-direction: row;\n    justify-content: center;\n    column-gap: 30px;\n  }\n}\n.singlePost__image {\n  width: 180px;\n  height: 180px;\n  background-position: center;\n  background-size: cover;\n  border-radius: 15px;\n  margin: 0 auto;\n}\n@media screen and (min-width: 640px) {\n  .singlePost__image {\n    width: 220px;\n    height: 220px;\n    margin: 0;\n  }\n}\n@media screen and (min-width: 1024px) {\n  .singlePost__image {\n    width: 240px;\n    height: 240px;\n    margin: 0;\n  }\n}\n\n.singlePost__title {\n  color: #3f3f3f;\n  font-size: 2.2rem;\n  margin-bottom: 7px;\n}\n\n.singlePost__description {\n  font-size: 1.3rem;\n  color: #808080;\n  margin-bottom: 7px;\n}\n\n.singlePost__author {\n  font-size: 1.5rem;\n  color: #808080;\n}\n.singlePost__author span {\n  color: #3f3f3f;\n  font-weight: bold;\n}\n\n.singlePost__saveBtn {\n  margin-top: 7px;\n  width: 100%;\n  max-width: 500px;\n  padding: 10px;\n  border: none;\n  background-color: white;\n  border: 2px solid red;\n  border-radius: 15px;\n  color: red;\n  font-weight: bold;\n  cursor: pointer;\n  transition: 0.2s ease background-color;\n  width: fit-content;\n}";
+
+  const styleEl = document.createElement("style");
+  const codeEl = document.createTextNode(code);
+  styleEl.type = 'text/css';
+  styleEl.appendChild(codeEl);
+  document.head.appendChild(styleEl);
+}

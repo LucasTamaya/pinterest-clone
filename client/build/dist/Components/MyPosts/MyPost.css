@@ -1,0 +1,43 @@
+.myPosts__emptyData__title {
+  text-align: center;
+  color: red;
+}
+
+.myPosts__emptyData__link {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border: none;
+  background-color: red;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease background-color;
+  text-align: center;
+}
+.myPosts__emptyData__link:hover {
+  background-color: rgb(221, 0, 0);
+}
+
+.myPosts__container {
+  padding: 30px;
+}
+
+.myPosts__title {
+  text-align: center;
+  color: red;
+  font-size: 2.2rem;
+}
+
+.myPosts__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 15px;
+}
+
+.post {
+  border: 1px solid black;
+}
