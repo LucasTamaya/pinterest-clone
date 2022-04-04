@@ -15,6 +15,7 @@ function SavedPosts() {
     variables: {
       id: id,
     },
+    fetchPolicy: "cache-and-network", // Permet d'update le cache si de nouvelles data sont présentes
   });
 
   if (error) {

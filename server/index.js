@@ -1,4 +1,3 @@
-// require("dotenv").config({ path: "/config.env" });
 const express = require("express");
 const { graphqlHTTP } = require("express-graphql");
 const mongoose = require("mongoose");
@@ -11,10 +10,17 @@ const app = express();
 // Middleware CORS afin d'autoriser la connexion au serveur aux autres appareils
 app.use(cors());
 
-mongoose.connect(
-  "mongodb+srv://lucas_tamaya:Lucas2003@linkedincloneapp.4qysj.mongodb.net/PinterestClone?retryWrites=true&w=majority"
-);
+// mongoose.connect(
+//   "mongodb+srv://lucas_tamaya:Lucas2003@linkedincloneapp.4qysj.mongodb.net/PinterestClone?retryWrites=true&w=majority"
+// );
+
+mongoose.connect(process.env.MONGODB_URI);
+
 mongoose.connection.once("open", () => console.log("MONGODB connected"));
+
+app.get("/", (req, res) => {
+  return res.json({ message: "Server is running" });
+});
 
 // Création du serveur graphql
 app.use(

@@ -1,0 +1,10 @@
+@import "../../utils/mixins";
+@import "../../utils/variables";
+
+.alreadySavedError__container {
+  @include popUp__container($main-red-color);
+}
+
+.alreadySavedError__message {
+  @include popUp__message($main-red-color);
+}

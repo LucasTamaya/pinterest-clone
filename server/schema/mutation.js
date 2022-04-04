@@ -87,7 +87,7 @@ const Mutation = new GraphQLObjectType({
       args: {
         title: { type: new GraphQLNonNull(GraphQLString) },
         description: { type: new GraphQLNonNull(GraphQLString) },
-        imgUrl: { type: GraphQLString }, // pas obligatoire, donc peut être = null
+        imgUrl: { type: new GraphQLNonNull(GraphQLString) },
         authorId: { type: new GraphQLNonNull(GraphQLString) },
       },
       resolve(parent, { title, description, imgUrl, authorId }) {
@@ -108,7 +108,14 @@ const Mutation = new GraphQLObjectType({
         userId: { type: new GraphQLNonNull(GraphQLString) },
         postId: { type: new GraphQLNonNull(GraphQLString) },
       },
-      resolve(parent, { userId, postId }) {
+      resolve: async (parent, { userId, postId }) => {
+        const user = await User.findById(userId);
+        // Si le post a déjà été sauvegardé, on retourne une erreur
+        if (user.savedPinsId.includes(postId)) {
+          console.log("this post has already been saved");
+          throw new Error("Pin already saved");
+        }
+        // Sinon on ajoute l'id du poste dans le tableau des posts enregistrés de l'utilisateur en question
         return User.findByIdAndUpdate(userId, {
           $push: { savedPinsId: postId },
         });

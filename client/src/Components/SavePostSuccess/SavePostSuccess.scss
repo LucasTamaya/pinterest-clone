@@ -1,0 +1,10 @@
+@import "../../utils/mixins";
+@import "../../utils/variables";
+
+.savePostSuccess__container {
+  @include popUp__container($main-green-color);
+}
+
+.savePostSuccess__message {
+  @include popUp__message($main-green-color);
+}
